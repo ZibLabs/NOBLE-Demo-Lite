@@ -1,0 +1,200 @@
+[gd_scene load_steps=10 format=3 uid="uid://kv6jw2pxvbgl"]
+
+[ext_resource type="Script" path="res://Player/Scripts/SettingHandling/settings_menu.gd" id="1_4r7mf"]
+[ext_resource type="Script" path="res://Player/Scripts/SettingHandling/VolumeLabel.gd" id="2_2m88e"]
+[ext_resource type="Script" path="res://Player/Scripts/SettingHandling/SFXVolumeDisplay.gd" id="3_ag4bf"]
+[ext_resource type="Script" path="res://Player/Scripts/SettingHandling/VoiceVolumeDisplay.gd" id="4_d75b8"]
+[ext_resource type="Script" path="res://ScreenMode.gd" id="5_sc24l"]
+
+[sub_resource type="Theme" id="Theme_3sfr8"]
+default_font_size = 52
+
+[sub_resource type="Theme" id="Theme_bx7um"]
+default_font_size = 23
+
+[sub_resource type="Theme" id="Theme_jgtgp"]
+default_font_size = 34
+
+[sub_resource type="Theme" id="Theme_txng5"]
+default_font_size = 24
+
+[node name="SettingsMenu" type="Node2D"]
+script = ExtResource("1_4r7mf")
+
+[node name="LeaveSave" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 408.0
+offset_bottom = 88.0
+theme = SubResource("Theme_3sfr8")
+text = "EXIT"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_top = 115.0
+offset_right = 1152.0
+offset_bottom = 155.0
+tab_alignment = 1
+current_tab = 4
+
+[node name="Audio" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Master" type="Node2D" parent="TabContainer/Audio"]
+position = Vector2(-96, -85)
+
+[node name="Volume" type="HSlider" parent="TabContainer/Audio/Master"]
+offset_left = 128.0
+offset_top = 144.0
+offset_right = 288.0
+offset_bottom = 160.0
+scale = Vector2(2, 2)
+value = 100.0
+ticks_on_borders = true
+
+[node name="VolumeDisplay" type="RichTextLabel" parent="TabContainer/Audio/Master"]
+offset_left = 464.0
+offset_top = 144.0
+offset_right = 608.0
+offset_bottom = 176.0
+theme = SubResource("Theme_bx7um")
+text = "Default text"
+script = ExtResource("2_2m88e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Audio/Master"]
+offset_left = 128.0
+offset_top = 96.0
+offset_right = 448.0
+offset_bottom = 144.0
+theme = SubResource("Theme_jgtgp")
+text = "Master volume"
+scroll_active = false
+
+[node name="SFX" type="Node2D" parent="TabContainer/Audio"]
+position = Vector2(-96, 10)
+
+[node name="Volume" type="HSlider" parent="TabContainer/Audio/SFX"]
+offset_left = 128.0
+offset_top = 144.0
+offset_right = 288.0
+offset_bottom = 160.0
+scale = Vector2(2, 2)
+value = 100.0
+ticks_on_borders = true
+
+[node name="SfxVolumeDisplay" type="RichTextLabel" parent="TabContainer/Audio/SFX"]
+offset_left = 464.0
+offset_top = 144.0
+offset_right = 608.0
+offset_bottom = 176.0
+theme = SubResource("Theme_bx7um")
+text = "Default text"
+script = ExtResource("3_ag4bf")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Audio/SFX"]
+offset_left = 128.0
+offset_top = 96.0
+offset_right = 448.0
+offset_bottom = 144.0
+theme = SubResource("Theme_jgtgp")
+text = "SFX"
+scroll_active = false
+
+[node name="Voice" type="Node2D" parent="TabContainer/Audio"]
+position = Vector2(-96, 106)
+
+[node name="Volume" type="HSlider" parent="TabContainer/Audio/Voice"]
+offset_left = 128.0
+offset_top = 144.0
+offset_right = 288.0
+offset_bottom = 160.0
+scale = Vector2(2, 2)
+value = 100.0
+ticks_on_borders = true
+
+[node name="VoiceVolumeDisplay" type="RichTextLabel" parent="TabContainer/Audio/Voice"]
+offset_left = 464.0
+offset_top = 144.0
+offset_right = 608.0
+offset_bottom = 176.0
+theme = SubResource("Theme_bx7um")
+text = "Default text"
+script = ExtResource("4_d75b8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Audio/Voice"]
+offset_left = 128.0
+offset_top = 96.0
+offset_right = 448.0
+offset_bottom = 144.0
+theme = SubResource("Theme_jgtgp")
+text = "Voice"
+scroll_active = false
+
+[node name="Display" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Resolution" type="Node2D" parent="TabContainer/Display"]
+position = Vector2(-59, -12)
+
+[node name="OptionButton" type="OptionButton" parent="TabContainer/Display/Resolution"]
+offset_left = 91.0
+offset_top = 62.0
+offset_right = 371.0
+offset_bottom = 110.0
+selected = 1
+item_count = 2
+popup/item_0/text = "Fullscreen Without Border BROKEN"
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+script = ExtResource("5_sc24l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Display/Resolution/OptionButton"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -32.0
+offset_right = 148.0
+offset_bottom = -8.0
+text = "Display Mode"
+
+[node name="Gameplay" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Accessability" type="VBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="D̸̪̋̀O̴̢̟͗̄̆N̸̨̘͉̘̏̑T̴̝̀̆ ̶̰̣͍̽̌͒͜͝T̵̤̯͂̉̃̊O̶̫̣͉͔͐̀͊Û̷̺̰Ċ̷̤̞̯H̶̨̜̥̐" type="VBoxContainer" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="ChaosMode" type="Node2D" parent="TabContainer/D̸̪̋̀O̴̢̟͗̄̆N̸̨̘͉̘̏̑T̴̝̀̆ ̶̰̣͍̽̌͒͜͝T̵̤̯͂̉̃̊O̶̫̣͉͔͐̀͊Û̷̺̰Ċ̷̤̞̯H̶̨̜̥̐"]
+position = Vector2(13, 18)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/D̸̪̋̀O̴̢̟͗̄̆N̸̨̘͉̘̏̑T̴̝̀̆ ̶̰̣͍̽̌͒͜͝T̵̤̯͂̉̃̊O̶̫̣͉͔͐̀͊Û̷̺̰Ċ̷̤̞̯H̶̨̜̥̐/ChaosMode"]
+offset_left = 16.0
+offset_top = 28.0
+offset_right = 1168.0
+offset_bottom = 132.0
+tooltip_text = "I̸͚̯͌̍̀̀̍́̈́T̶̘̘̈͌̋̔̊̈́͘Š̷̪̙̲̪̰̳̌̈̇ ̴̪̌̈́̇̉̊N̸̦͂̓̍͜Ơ̴̬̈̾T̸̯̥̤̫̼̑̂́̈́̃̚ ̸̛̲͔̄̆̽Ẃ̶̡̝̱̠̗͉̿̿̑͘O̶͚̖̞̣̳͗̉͊̓̃͜R̷̨̝̱̙̎̃̓͗͋̕T̵̡̖̗̀̈́̌̌̈̾͘H̶̻̮͍̯̻̏̄ ̴̱͈̠̱̂͂͘͝ͅT̴̘͚̮̳͖̰̜͌̑Ḫ̵̓Ḛ̷̻̝̗̻̯͛̈́͊̌͋ ̵̥̞̼͖͇̺͇͛̔̿͗̓̓R̷̪̔̌͊͋̑̓̈Į̴̦̬̱͎̘͋̌̏͆̍͒̎͜S̶̩̪̞͌̀̈́̒͌K̷̞̇͆͒̎̚"
+theme = SubResource("Theme_txng5")
+text = "Embrace True Chaos?"
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/D̸̪̋̀O̴̢̟͗̄̆N̸̨̘͉̘̏̑T̴̝̀̆ ̶̰̣͍̽̌͒͜͝T̵̤̯͂̉̃̊O̶̫̣͉͔͐̀͊Û̷̺̰Ċ̷̤̞̯H̶̨̜̥̐/ChaosMode"]
+offset_left = 268.0
+offset_top = 34.0
+offset_right = 312.0
+offset_bottom = 58.0
+
+[connection signal="pressed" from="LeaveSave" to="." method="_on_leave_save_pressed"]
+[connection signal="value_changed" from="TabContainer/Audio/Master/Volume" to="TabContainer/Audio/Master/VolumeDisplay" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="TabContainer/Audio/SFX/Volume" to="TabContainer/Audio/SFX/SfxVolumeDisplay" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="TabContainer/Audio/Voice/Volume" to="TabContainer/Audio/Voice/VoiceVolumeDisplay" method="_on_volume_value_changed"]
+[connection signal="item_selected" from="TabContainer/Display/Resolution/OptionButton" to="TabContainer/Display/Resolution/OptionButton" method="_on_item_selected"]
+[connection signal="toggled" from="TabContainer/D̸̪̋̀O̴̢̟͗̄̆N̸̨̘͉̘̏̑T̴̝̀̆ ̶̰̣͍̽̌͒͜͝T̵̤̯͂̉̃̊O̶̫̣͉͔͐̀͊Û̷̺̰Ċ̷̤̞̯H̶̨̜̥̐/ChaosMode/CheckButton" to="." method="_on_check_button_toggled"]

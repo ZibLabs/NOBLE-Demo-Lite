@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://31x6ct3ge7o1"
+path="res://.godot/imported/fence_simple.obj-c0a42e0d52ad69579e9d59b15dbad64f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fence_simple.obj-c0a42e0d52ad69579e9d59b15dbad64f.mesh"]
+
+source_file="res://addons/godot-constraint-solving-ebd52c6afa8616c383333dc3783ae34504476ea6/addons/wfc/examples/assets/kenny-nature-kit/obj/fence_simple.obj"
+dest_files=["res://.godot/imported/fence_simple.obj-c0a42e0d52ad69579e9d59b15dbad64f.mesh", "res://.godot/imported/fence_simple.obj-c0a42e0d52ad69579e9d59b15dbad64f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

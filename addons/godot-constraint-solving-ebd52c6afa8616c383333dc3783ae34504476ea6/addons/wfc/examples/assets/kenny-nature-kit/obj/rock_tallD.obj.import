@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bda36njgcrble"
+path="res://.godot/imported/rock_tallD.obj-2fac9df88e3fb2f457ae2efacc4c1f6f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rock_tallD.obj-2fac9df88e3fb2f457ae2efacc4c1f6f.mesh"]
+
+source_file="res://addons/godot-constraint-solving-ebd52c6afa8616c383333dc3783ae34504476ea6/addons/wfc/examples/assets/kenny-nature-kit/obj/rock_tallD.obj"
+dest_files=["res://.godot/imported/rock_tallD.obj-2fac9df88e3fb2f457ae2efacc4c1f6f.mesh", "res://.godot/imported/rock_tallD.obj-2fac9df88e3fb2f457ae2efacc4c1f6f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

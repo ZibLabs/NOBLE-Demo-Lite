@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://nh1rm5qmf8q3"
+path="res://.godot/imported/bridge_center_wood.obj-1e6588653dde3b3a0abd818d5f1fef15.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bridge_center_wood.obj-1e6588653dde3b3a0abd818d5f1fef15.mesh"]
+
+source_file="res://addons/godot-constraint-solving-ebd52c6afa8616c383333dc3783ae34504476ea6/addons/wfc/examples/assets/kenny-nature-kit/obj/bridge_center_wood.obj"
+dest_files=["res://.godot/imported/bridge_center_wood.obj-1e6588653dde3b3a0abd818d5f1fef15.mesh", "res://.godot/imported/bridge_center_wood.obj-1e6588653dde3b3a0abd818d5f1fef15.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dealjo4gef1vn"
+path="res://.godot/imported/crop_turnip.obj-01d598cbbc654147e3d1a25a990bc18b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crop_turnip.obj-01d598cbbc654147e3d1a25a990bc18b.mesh"]
+
+source_file="res://addons/godot-constraint-solving-ebd52c6afa8616c383333dc3783ae34504476ea6/addons/wfc/examples/assets/kenny-nature-kit/obj/crop_turnip.obj"
+dest_files=["res://.godot/imported/crop_turnip.obj-01d598cbbc654147e3d1a25a990bc18b.mesh", "res://.godot/imported/crop_turnip.obj-01d598cbbc654147e3d1a25a990bc18b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

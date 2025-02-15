@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chikj2hgvrp3q"
+path="res://.godot/imported/cliff_large_stone.obj-1151d899ef2365ad5934b37eab46e5ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_large_stone.obj-1151d899ef2365ad5934b37eab46e5ea.mesh"]
+
+source_file="res://addons/godot-constraint-solving-ebd52c6afa8616c383333dc3783ae34504476ea6/addons/wfc/examples/assets/kenny-nature-kit/obj/cliff_large_stone.obj"
+dest_files=["res://.godot/imported/cliff_large_stone.obj-1151d899ef2365ad5934b37eab46e5ea.mesh", "res://.godot/imported/cliff_large_stone.obj-1151d899ef2365ad5934b37eab46e5ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

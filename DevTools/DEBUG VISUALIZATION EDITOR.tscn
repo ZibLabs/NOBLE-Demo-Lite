@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg351oemi37wr"]
+
+[ext_resource type="Script" path="res://Player/Scripts/GenVar.gd" id="1_m7hqg"]
+
+[node name="DebugVisualizationEditor" type="Node" groups=["SceneSignals"]]
+
+[node name="Generation Control" type="Node2D" parent="."]
+script = ExtResource("1_m7hqg")
+
+[node name="Node2D4" type="Node2D" parent="."]
+
+[node name="Node2D5" type="Node2D" parent="."]

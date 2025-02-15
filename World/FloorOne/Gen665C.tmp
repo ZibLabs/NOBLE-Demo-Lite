@@ -1,0 +1,459 @@
+[gd_scene load_steps=34 format=4 uid="uid://d5lqhpgpvjb5"]
+
+[ext_resource type="Texture2D" uid="uid://cwrh63ccd4cwy" path="res://Textures/Splashes/icon.svg" id="1_t482w"]
+[ext_resource type="Texture2D" uid="uid://its1xpigm3sk" path="res://Textures/Tiles/Assets.png" id="2_l4cpm"]
+[ext_resource type="PackedScene" uid="uid://ebfv766nifj1" path="res://Player/CharacterScene.tscn" id="3_trvi2"]
+[ext_resource type="Texture2D" uid="uid://6d66snuuqv3p" path="res://Textures/Lighting/160x160 textures (16).png" id="4_jeho3"]
+[ext_resource type="Script" path="res://Scripts/UIHandler.gd" id="5_jsyn6"]
+[ext_resource type="Script" path="res://World/FloorOne/RoomOneEnter.gd" id="8_ksiuy"]
+[ext_resource type="Texture2D" uid="uid://cvjsuqqyxsejo" path="res://addons/kenney_particle_pack/smoke_01.png" id="9_yohqa"]
+[ext_resource type="PackedScene" uid="uid://c3480jeic8lgs" path="res://DevTools/Props/CardChest.tscn" id="13_hvm6l"]
+
+[sub_resource type="Gradient" id="Gradient_na1ij"]
+offsets = PackedFloat32Array(0, 0.501832, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.978022, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g5mll"]
+gradient = SubResource("Gradient_na1ij")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vnva1"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(1, 10, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 5, 1)
+angle_min = -360.0
+angle_max = 360.0
+direction = Vector3(0, 0, 0)
+spread = 5.0
+initial_velocity_min = -75.0
+initial_velocity_max = -25.0
+angular_velocity_min = -45.0
+angular_velocity_max = 45.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_max = 0.25
+color_ramp = SubResource("GradientTexture1D_g5mll")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st14v"]
+size = Vector2(11, 41)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cwylo"]
+polygon = PackedVector2Array(8, 8, 8, 8, 8, 8, 8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_veqjv"]
+polygon = PackedVector2Array(8, -8, 8, -8, 8, 8, 8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h40al"]
+polygon = PackedVector2Array(8, -8, 8, -8, 8, -8, 8, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oabpw"]
+polygon = PackedVector2Array(8, 8, 8, 8, 8, 8, 8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y6pvk"]
+polygon = PackedVector2Array(8, 8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h7m32"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ov7g4"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, 8, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mh330"]
+polygon = PackedVector2Array(-8, 8, -8, 8, 8, 8, 8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xhtem"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h200u"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cg77n"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_64lp2"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, -8, -8, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h7lp6"]
+polygon = PackedVector2Array(-8, 8, -8, 8, -8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_nodk5"]
+polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7es1p"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aviyf"]
+polygon = PackedVector2Array(8, -8, -8, -8, -8, 8, -8, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vuvtg"]
+polygon = PackedVector2Array(-8, 8, -8, 8, -8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vt6gp"]
+polygon = PackedVector2Array(-8, -8, -8, -8, -8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8f7ko"]
+polygon = PackedVector2Array(-8, -8, -8, -8, -8, -8, -8, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_upo8w"]
+texture = ExtResource("2_l4cpm")
+0:0/0 = 0
+2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_oabpw")
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_mh330")
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_h7lp6")
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_cwylo")
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_y6pvk")
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_xhtem")
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_nodk5")
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_vuvtg")
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_veqjv")
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_h7m32")
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_h200u")
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_7es1p")
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_vt6gp")
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+14:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+1:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_h40al")
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ov7g4")
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_cg77n")
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_aviyf")
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_8f7ko")
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:3/0 = 0
+10:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_64lp2")
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:4/0 = 0
+10:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+5:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+15:5/0 = 0
+17:4/size_in_atlas = Vector2i(1, 2)
+17:4/0 = 0
+18:4/size_in_atlas = Vector2i(1, 2)
+18:4/0 = 0
+16:4/size_in_atlas = Vector2i(1, 2)
+16:4/0 = 0
+16:2/size_in_atlas = Vector2i(1, 2)
+16:2/0 = 0
+17:2/size_in_atlas = Vector2i(1, 2)
+17:2/0 = 0
+18:2/size_in_atlas = Vector2i(1, 2)
+18:2/0 = 0
+6:3/size_in_atlas = Vector2i(3, 3)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_64578"]
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_upo8w")
+
+[node name="Beginning" type="Node2D"]
+position = Vector2(1, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(83635, 129631)
+scale = Vector2(31245.3, 28900.8)
+texture = ExtResource("1_t482w")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+self_modulate = Color(0.647395, 0.647395, 0.647395, 1)
+visibility_layer = 0
+color = Color(0.00392157, 0, 0, 1)
+
+[node name="PlatformerController2D" parent="." instance=ExtResource("3_trvi2")]
+position = Vector2(239, 157)
+jumpHeight = 2.6
+
+[node name="PointLight2D" type="PointLight2D" parent="PlatformerController2D"]
+position = Vector2(-20, -7)
+color = Color(0.986413, 0.459458, 0.359982, 1)
+energy = 1.76
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("4_jeho3")
+texture_scale = 1.33
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PlatformerController2D"]
+layer = 128
+script = ExtResource("5_jsyn6")
+
+[node name="StartRoom" type="Node2D" parent="."]
+
+[node name="StartDoor" type="Node2D" parent="StartRoom"]
+position = Vector2(301, 150)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="StartRoom/StartDoor"]
+visible = false
+position = Vector2(56, 6)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_vnva1")
+texture = ExtResource("9_yohqa")
+lifetime = 1.5
+speed_scale = 0.8
+randomness = 1.0
+
+[node name="DoorColliderStart" type="Area2D" parent="StartRoom/StartDoor"]
+position = Vector2(-4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartRoom/StartDoor/DoorColliderStart"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_st14v")
+
+[node name="CardChest" parent="StartRoom" instance=ExtResource("13_hvm6l")]
+position = Vector2(-67, 166)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="StartRoom"]
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAAEAAsAAAADAAAAAAAFAAsAAAADAAAAAAAGAAsAAAADAAAAAAAHAAsAAAADAAAAAAAIAAsAAAADAAAAAAAJAAsAAAADAAAAAAAKAAsAAAADAAAAAAALAAsAAAADAAAAAAAMAAsAAAADAAAAAAANAAsAAAADAAAAAAAOAAsAAAADAAAAAAAPAAsAAAADAAAAAAAQAAsAAAADAAAAAAARAAsAAAADAAAAAAANAAcAAAADAAQAAAAOAAcAAAADAAQAAAAPAAcAAAADAAQAAAAQAAcAAAADAAQAAAARAAcAAAADAAQAAAAMAAcAAAADAAQAAAASAAsAAAADAAAAAAASAAcAAAADAAQAAAALAAcAAAADAAQAAAAKAAcAAAADAAQAAAAJAAcAAAADAAQAAAADAAsAAAADAAAAAAACAAsAAAADAAAAAAD+/wsAAAADAAAAAAABAAsAAAADAAAAAAAAAAsAAAADAAAAAAD//wsAAAADAAAAAAD9/wsAAAADAAAAAAD8/wsAAAADAAAAAAD//wcAAAADAAQAAAD+/wcAAAADAAQAAAD9/wcAAAADAAQAAAD8/wcAAAADAAQAAAD7/wcAAAADAAQAAAD6/wcAAAADAAQAAAD5/wcAAAADAAQAAAD4/wcAAAAEAAMAAAD7/wsAAAADAAAAAAD6/wsAAAADAAAAAAD5/wsAAAADAAAAAAD4/wsAAAAEAAEAAAD4/wgAAAAFAAIAAAD4/wkAAAAFAAIAAAD4/woAAAAFAAIAAAAAAAcAAAADAAQAAAABAAcAAAADAAQAAAACAAcAAAADAAQAAAADAAcAAAADAAQAAAAEAAcAAAADAAQAAAAFAAcAAAADAAQAAAAGAAcAAAADAAQAAAAHAAcAAAADAAQAAAAIAAcAAAADAAQAAAA=")
+tile_set = SubResource("TileSet_64578")
+
+[node name="RoomOne" type="Node2D" parent="."]
+script = ExtResource("8_ksiuy")
+
+[node name="StartDoor" type="Node2D" parent="RoomOne"]
+position = Vector2(301, 150)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RoomOne/StartDoor"]
+visible = false
+position = Vector2(56, 6)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_vnva1")
+texture = ExtResource("9_yohqa")
+lifetime = 1.5
+speed_scale = 0.8
+randomness = 1.0
+
+[node name="DoorColliderStart" type="Area2D" parent="RoomOne/StartDoor"]
+position = Vector2(-4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomOne/StartDoor/DoorColliderStart"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_st14v")
+
+[node name="CardChest" parent="RoomOne" instance=ExtResource("13_hvm6l")]
+position = Vector2(-67, 166)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="RoomOne"]
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAAEAAsAAAADAAAAAAAFAAsAAAADAAAAAAAGAAsAAAADAAAAAAAHAAsAAAADAAAAAAAIAAsAAAADAAAAAAAJAAsAAAADAAAAAAAKAAsAAAADAAAAAAALAAsAAAADAAAAAAAMAAsAAAADAAAAAAANAAsAAAADAAAAAAAOAAsAAAADAAAAAAAPAAsAAAADAAAAAAAQAAsAAAADAAAAAAARAAsAAAADAAAAAAANAAcAAAADAAQAAAAOAAcAAAADAAQAAAAPAAcAAAADAAQAAAAQAAcAAAADAAQAAAARAAcAAAADAAQAAAAMAAcAAAADAAQAAAASAAsAAAADAAAAAAASAAcAAAADAAQAAAALAAcAAAADAAQAAAAKAAcAAAADAAQAAAAJAAcAAAADAAQAAAADAAsAAAADAAAAAAACAAsAAAADAAAAAAD+/wsAAAADAAAAAAABAAsAAAADAAAAAAAAAAsAAAADAAAAAAD//wsAAAADAAAAAAD9/wsAAAADAAAAAAD8/wsAAAADAAAAAAD//wcAAAADAAQAAAD+/wcAAAADAAQAAAD9/wcAAAADAAQAAAD8/wcAAAADAAQAAAD7/wcAAAADAAQAAAD6/wcAAAADAAQAAAD5/wcAAAADAAQAAAD4/wcAAAAEAAMAAAD7/wsAAAADAAAAAAD6/wsAAAADAAAAAAD5/wsAAAADAAAAAAD4/wsAAAAEAAEAAAD4/wgAAAAFAAIAAAD4/wkAAAAFAAIAAAD4/woAAAAFAAIAAAAAAAcAAAADAAQAAAABAAcAAAADAAQAAAACAAcAAAADAAQAAAADAAcAAAADAAQAAAAEAAcAAAADAAQAAAAFAAcAAAADAAQAAAAGAAcAAAADAAQAAAAHAAcAAAADAAQAAAAIAAcAAAADAAQAAAA=")
+tile_set = SubResource("TileSet_64578")
+
+[node name="RoomTwo" type="Node2D" parent="."]
+
+[node name="StartDoor" type="Node2D" parent="RoomTwo"]
+position = Vector2(301, 150)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RoomTwo/StartDoor"]
+visible = false
+position = Vector2(56, 6)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_vnva1")
+texture = ExtResource("9_yohqa")
+lifetime = 1.5
+speed_scale = 0.8
+randomness = 1.0
+
+[node name="DoorColliderStart" type="Area2D" parent="RoomTwo/StartDoor"]
+position = Vector2(-4, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomTwo/StartDoor/DoorColliderStart"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_st14v")
+
+[node name="CardChest" parent="RoomTwo" instance=ExtResource("13_hvm6l")]
+position = Vector2(-67, 166)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="RoomTwo"]
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAAEAAsAAAADAAAAAAAFAAsAAAADAAAAAAAGAAsAAAADAAAAAAAHAAsAAAADAAAAAAAIAAsAAAADAAAAAAAJAAsAAAADAAAAAAAKAAsAAAADAAAAAAALAAsAAAADAAAAAAAMAAsAAAADAAAAAAANAAsAAAADAAAAAAAOAAsAAAADAAAAAAAPAAsAAAADAAAAAAAQAAsAAAADAAAAAAARAAsAAAADAAAAAAANAAcAAAADAAQAAAAOAAcAAAADAAQAAAAPAAcAAAADAAQAAAAQAAcAAAADAAQAAAARAAcAAAADAAQAAAAMAAcAAAADAAQAAAASAAsAAAADAAAAAAASAAcAAAADAAQAAAALAAcAAAADAAQAAAAKAAcAAAADAAQAAAAJAAcAAAADAAQAAAADAAsAAAADAAAAAAACAAsAAAADAAAAAAD+/wsAAAADAAAAAAABAAsAAAADAAAAAAAAAAsAAAADAAAAAAD//wsAAAADAAAAAAD9/wsAAAADAAAAAAD8/wsAAAADAAAAAAD//wcAAAADAAQAAAD+/wcAAAADAAQAAAD9/wcAAAADAAQAAAD8/wcAAAADAAQAAAD7/wcAAAADAAQAAAD6/wcAAAADAAQAAAD5/wcAAAADAAQAAAD4/wcAAAAEAAMAAAD7/wsAAAADAAAAAAD6/wsAAAADAAAAAAD5/wsAAAADAAAAAAD4/wsAAAAEAAEAAAD4/wgAAAAFAAIAAAD4/wkAAAAFAAIAAAD4/woAAAAFAAIAAAAAAAcAAAADAAQAAAABAAcAAAADAAQAAAACAAcAAAADAAQAAAADAAcAAAADAAQAAAAEAAcAAAADAAQAAAAFAAcAAAADAAQAAAAGAAcAAAADAAQAAAAHAAcAAAADAAQAAAAIAAcAAAADAAQAAAA=")
+tile_set = SubResource("TileSet_64578")
+
+[connection signal="body_entered" from="StartRoom/StartDoor/DoorColliderStart" to="RoomOne" method="_on_door_collider_start_body_entered"]
+[connection signal="body_entered" from="RoomOne/StartDoor/DoorColliderStart" to="." method="_on_door_collider_start_body_entered"]
+[connection signal="body_entered" from="RoomTwo/StartDoor/DoorColliderStart" to="." method="_on_door_collider_start_body_entered"]

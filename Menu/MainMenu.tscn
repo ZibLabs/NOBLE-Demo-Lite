@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://l0ehodlrn0tc"]
+
+[ext_resource type="Script" path="res://Menu/MenuButtonHandler.gd" id="1_2qenc"]
+[ext_resource type="FontFile" uid="uid://dcjys1tx37pk5" path="res://Textures/Formatting/Heon.ttf" id="2_xxyec"]
+[ext_resource type="Texture2D" uid="uid://cjf2xr40h1apc" path="res://Textures/Particles/Card_Back-88x124.png" id="3_g8n2x"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_2qenc")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 96.0
+offset_top = 256.0
+offset_right = 480.0
+offset_bottom = 384.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("2_xxyec")
+theme_override_font_sizes/font_size = 100
+text = "PLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 96.0
+offset_top = 392.0
+offset_right = 480.0
+offset_bottom = 520.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("2_xxyec")
+theme_override_font_sizes/font_size = 100
+text = "SETTINGS"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 96.0
+offset_top = 528.0
+offset_right = 480.0
+offset_bottom = 656.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("2_xxyec")
+theme_override_font_sizes/font_size = 100
+text = "QUIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 96.0
+offset_top = 56.0
+offset_right = 1152.0
+offset_bottom = 192.0
+theme_override_fonts/normal_font = ExtResource("2_xxyec")
+theme_override_font_sizes/normal_font_size = 100
+text = "NOBLE
+"
+fit_content = true
+tab_size = 8
+
+[node name="Node" type="Node" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(1293, 793)
+amount = 52
+lifetime = 1.75
+preprocess = 10.4
+speed_scale = 0.5
+texture = ExtResource("3_g8n2x")
+direction = Vector2(-1, 0)
+spread = 21.05
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -1000.0
+angular_velocity_max = -750.0
+orbit_velocity_min = -0.32
+orbit_velocity_max = -0.32
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

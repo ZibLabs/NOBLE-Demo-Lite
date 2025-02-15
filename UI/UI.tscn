@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://sfccoq5ajb7k"]
+
+[ext_resource type="Script" path="res://UI/PauseScreen.gd" id="1_q74eb"]
+[ext_resource type="Texture2D" uid="uid://dn8kwe5pes0px" path="res://icon.svg" id="2_7wxkj"]
+[ext_resource type="Script" path="res://UI/deck_view.gd" id="3_5ymak"]
+
+[sub_resource type="Gradient" id="Gradient_i103x"]
+offsets = PackedFloat32Array(0, 0.832117, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.606555, 0.260484, 0.0744239, 0.948905, 0.639216, 0.27451, 0.0784314, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_f5ycy"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0nrpv"]
+height = 32
+seamless_blend_skirt = 1.0
+bump_strength = 18.0
+color_ramp = SubResource("Gradient_i103x")
+noise = SubResource("FastNoiseLite_f5ycy")
+
+[sub_resource type="Gradient" id="Gradient_dwolg"]
+colors = PackedColorArray(0.255, 0.078, 0.067, 0, 0.639216, 0.27451, 0.0784314, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_382mf"]
+gradient = SubResource("Gradient_dwolg")
+height = 8
+fill_to = Vector2(0, 1)
+
+[node name="UI" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q74eb")
+
+[node name="GuiBackground" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 94.0
+texture = SubResource("NoiseTexture2D_0nrpv")
+stretch_mode = 6
+
+[node name="BelowDivider" type="TextureRect" parent="GuiBackground"]
+layout_mode = 0
+offset_top = 73.0
+offset_right = 1152.0
+offset_bottom = 93.0
+texture = SubResource("GradientTexture2D_382mf")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 72.0
+texture_normal = ExtResource("2_7wxkj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+process_mode = 3
+
+[node name="DeckView" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("3_5ymak")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DeckView"]
+layout_mode = 0
+offset_top = 96.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="PauseMenu" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 576.0
+
+[node name="Back" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 167.0
+offset_right = 752.0
+offset_bottom = 215.0
+text = "BACK TO GAME"
+
+[node name="Quit" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 255.0
+offset_right = 752.0
+offset_bottom = 303.0
+text = "QUIT"
+
+[node name="Deck" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 343.0
+offset_right = 752.0
+offset_bottom = 391.0
+text = "VIEW DECK"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="PauseMenu/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="PauseMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PauseMenu/Deck" to="." method="_on_deck_pressed"]

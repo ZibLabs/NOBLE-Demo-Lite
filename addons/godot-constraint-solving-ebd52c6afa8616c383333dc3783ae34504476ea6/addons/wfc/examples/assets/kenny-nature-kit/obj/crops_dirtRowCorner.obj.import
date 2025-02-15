@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://decf7wt0bdv6b"
+path="res://.godot/imported/crops_dirtRowCorner.obj-1adf094cb1b81da5b19c501598c45a61.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crops_dirtRowCorner.obj-1adf094cb1b81da5b19c501598c45a61.mesh"]
+
+source_file="res://addons/godot-constraint-solving-ebd52c6afa8616c383333dc3783ae34504476ea6/addons/wfc/examples/assets/kenny-nature-kit/obj/crops_dirtRowCorner.obj"
+dest_files=["res://.godot/imported/crops_dirtRowCorner.obj-1adf094cb1b81da5b19c501598c45a61.mesh", "res://.godot/imported/crops_dirtRowCorner.obj-1adf094cb1b81da5b19c501598c45a61.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://crquaiceliclx"]
+
+[ext_resource type="Script" path="res://World/FloorOne/FloorOneSequencedRooms/RoomOne/CombatHandler.gd" id="1_0ttv8"]
+[ext_resource type="Texture2D" uid="uid://suvkiebj5cp2" path="res://World/FloorOne/FloorOneSequencedRooms/RoomOne/GregSpritePlaceholder.png" id="1_mtwdp"]
+
+[sub_resource type="Theme" id="Theme_gpi28"]
+default_base_scale = 0.69
+
+[node name="Combat" type="Node2D"]
+position = Vector2(2, 0)
+
+[node name="CombatArea" type="Sprite2D" parent="."]
+position = Vector2(173.5, 252)
+scale = Vector2(0.376302, 0.324074)
+texture = ExtResource("1_mtwdp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CombatArea"]
+offset_left = -224.554
+offset_top = -188.229
+offset_right = 57.4464
+offset_bottom = -34.2285
+theme = SubResource("Theme_gpi28")
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 31
+text = "EPIC COMABAT... isnt implimented yet... GET OUT!"
+
+[node name="CombatGreg" type="Node2D" parent="."]
+script = ExtResource("1_0ttv8")

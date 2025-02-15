@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb2wuwj5bfnj7"]
+
+[ext_resource type="Script" path="res://Menu/character_select.gd" id="1_hyjr1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5fyk"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.5)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_2xue8"]
+default_font_size = 52
+TooltipPanel/font_sizes/title_font_size = 1
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_u5fyk")
+
+[node name="CharacterSelect" type="Node2D"]
+script = ExtResource("1_hyjr1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 515.0
+offset_right = 1152.0
+offset_bottom = 621.0
+alignment = 1
+
+[node name="Neon" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme = SubResource("Theme_2xue8")
+text = "The Signal"
+
+[node name="Hydrogen" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme = SubResource("Theme_2xue8")
+disabled = true
+text = "The Boom"
+
+[node name="Radon" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme = SubResource("Theme_2xue8")
+disabled = true
+text = "Chaos Curist"
+
+[connection signal="pressed" from="HBoxContainer/Neon" to="." method="_on_neon_pressed"]
+[connection signal="pressed" from="HBoxContainer/Hydrogen" to="." method="_on_hydrogen_pressed"]
+[connection signal="pressed" from="HBoxContainer/Radon" to="." method="_on_radon_pressed"]
