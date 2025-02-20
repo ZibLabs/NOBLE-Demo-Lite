@@ -5,12 +5,14 @@
 4. Enjoy.
    
 # ToDo
-Add combat.
-Make card art.
-Obtain Funds.
-Add more level permutations.
-Idealize more cards.
-finalize lore sheet.
-finalize bosses.
-hire someone to make sprites and cards.
-clean out the file system.
+1. Add combat.
+2. Make card art.
+3. Obtain Funds.
+4. Add more level permutations.
+5. Idealize more cards.
+6. finalize lore sheet.
+7. finalize bosses.
+8. hire someone to make sprites and cards.
+9. clean out the file system.
+10. Finalize and brush up
+11. release...
