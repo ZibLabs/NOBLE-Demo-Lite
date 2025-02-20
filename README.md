@@ -2,7 +2,7 @@
 1. Download as ZIP. (I hope you can do this)
 2. Extract the ZIP. (Again hope you can do this)
 3. Run either GameTest.exe or GameTest.Console.exe (Self explainitory)
-4. Enjoy.
+4. Enjoy. And remember this is just the skeleton of what I want this to become so most of the work is in the code.
    
 # ToDo
 1. Add combat.
