@@ -9,14 +9,14 @@
 2. Make card art.
 3. Obtain Funds.
 4. Add more level permutations.
-5. Make this repo private.
-6. Idealize more cards.
-7. finalize lore sheet.
-8. finalize bosses.
-9. hire someone to make sprites and cards.
-10. clean out the file system.
-11. Finalize and brush up
-12. release...
+5. Make this repo private and clean it up.
+7. Idealize more cards.
+8. finalize lore sheet.
+9. finalize bosses.
+10. hire someone to make sprites and cards.
+11. clean out the file system.
+12. Finalize and brush up
+13. release...
 
 # Reviewing
 - If you have any important notes or ideas leave them in issues alongside whatever name you would want in the credits. (Once made)
