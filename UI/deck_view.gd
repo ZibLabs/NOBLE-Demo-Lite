@@ -8,3 +8,5 @@ func _ready() -> void:
 		else:
 			$RichTextLabel.add_text(i["Name"] + " Description: No description available.")
 		$RichTextLabel.newline()
+func _on_button_pressed() -> void:
+	$".".visible = false

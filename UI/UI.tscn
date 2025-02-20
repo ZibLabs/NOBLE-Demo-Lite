@@ -67,6 +67,7 @@ process_mode = 3
 visible = false
 
 [node name="DeckView" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_top = 96.0
 offset_right = 1152.0
@@ -77,6 +78,15 @@ script = ExtResource("3_5ymak")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+
+[node name="Button" type="Button" parent="DeckView"]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 72.0
+icon = ExtResource("2_7wxkj")
+expand_icon = true
 
 [node name="PauseMenu" type="Control" parent="."]
 process_mode = 2
@@ -128,6 +138,7 @@ offset_bottom = 479.0
 text = "OPEN SKILLS"
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="DeckView/Button" to="DeckView" method="_on_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="PauseMenu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PauseMenu/Deck" to="." method="_on_deck_pressed"]
