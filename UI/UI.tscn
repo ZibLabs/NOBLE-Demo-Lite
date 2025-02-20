@@ -64,17 +64,17 @@ stretch_mode = 0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 process_mode = 3
+visible = false
 
 [node name="DeckView" type="Control" parent="."]
-visible = false
 anchors_preset = 0
+offset_top = 96.0
 offset_right = 1152.0
 offset_bottom = 648.0
 script = ExtResource("3_5ymak")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DeckView"]
 layout_mode = 0
-offset_top = 96.0
 offset_right = 1152.0
 offset_bottom = 648.0
 
@@ -119,7 +119,16 @@ offset_right = 752.0
 offset_bottom = 391.0
 text = "VIEW DECK"
 
+[node name="Skill" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 431.0
+offset_right = 752.0
+offset_bottom = 479.0
+text = "OPEN SKILLS"
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="PauseMenu/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="PauseMenu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PauseMenu/Deck" to="." method="_on_deck_pressed"]
+[connection signal="pressed" from="PauseMenu/Skill" to="." method="_on_deck_pressed"]
